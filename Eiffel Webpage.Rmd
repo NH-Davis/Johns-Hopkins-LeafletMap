@@ -1,0 +1,27 @@
+---
+title: "Eiffel"
+author: "NHartley"
+date: "2024-03-02"
+output: html_document
+---
+
+This is an R Markdown document designed to create a simple webpage using Leaflet that includes a map of Paris which highlights the location of the Eiffel Tower, along with the date and time of the webpage's creation.
+
+```{r setup, echo=FALSE}
+# Load necessary libraries
+library(leaflet)
+
+# Set global chunk options
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+leaflet() %>% 
+  addTiles() %>%  # Add default OpenStreetMap tiles
+  setView(lng = 2.2945, lat = 48.8584, zoom = 16) %>% 
+  addMarkers(lng = 2.2945, lat = 48.8584, popup = "Eiffel Tower")
+
+format(Sys.time(), "%Y-%m-%d %H:%M:%S")
+
+
+```
+
+This map can be viewed on Rpubs at this location: https://rpubs.com/nhartley1986/1156088
